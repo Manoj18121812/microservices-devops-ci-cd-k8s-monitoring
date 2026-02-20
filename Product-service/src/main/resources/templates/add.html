@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Product</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.6);
+
+            transform: perspective(1000px) rotateX(5deg);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: none;
+
+            background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
+
+            box-shadow:
+                inset 2px 2px 5px rgba(0,0,0,0.2),
+                inset -2px -2px 5px rgba(255,255,255,0.8);
+
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow:
+                inset 1px 1px 4px rgba(0,0,0,0.3),
+                0 0 10px rgba(56,239,125,0.7);
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+
+            background: linear-gradient(to bottom, #11998e, #38ef7d);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 0 #0b6b63,
+                0 12px 20px rgba(0,0,0,0.3);
+
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(3px);
+            box-shadow:
+                0 3px 0 #0b6b63,
+                0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #11998e;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h2>📦 Add Product</h2>
+
+    <form action="/save" method="post">
+
+        <input type="text" name="name" placeholder="Enter Product Name" required>
+
+        <input type="text" name="price" placeholder="Enter Product Price" required>
+
+        <button type="submit">💾 Save Product</button>
+
+    </form>
+
+    <a href="/" class="back-link">⬅ Back to Product List</a>
+
+</div>
+
+</body>
+</html>
