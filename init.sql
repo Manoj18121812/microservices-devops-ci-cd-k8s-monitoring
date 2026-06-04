@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS userdb;
+CREATE DATABASE IF NOT EXISTS productdb;
+
+CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY 'apppass';
+
+GRANT ALL PRIVILEGES ON userdb.* TO 'appuser'@'%';
+GRANT ALL PRIVILEGES ON productdb.* TO 'appuser'@'%';
+
+FLUSH PRIVILEGES;

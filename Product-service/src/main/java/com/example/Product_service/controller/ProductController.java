@@ -13,42 +13,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ProductController {
 
     @Autowired
-    ProductService service;
+    private ProductService service;
 
-    @GetMapping("/")
+    @GetMapping("/product")
     public String home(Model model) {
-
         model.addAttribute("list", service.listAll());
-
         return "index";
-
     }
 
     @GetMapping("/new")
     public String addProduct(Model model) {
-
         model.addAttribute("product", new Product());
-
         return "add";
-
     }
 
     @PostMapping("/save")
     public String save(Product product) {
-
         service.save(product);
-
-        return "redirect:/";
-
+        return "redirect:/product";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
-
         service.delete(id);
-
-        return "redirect:/";
-
+        return "redirect:/product";
     }
-
 }
